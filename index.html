@@ -16,6 +16,62 @@
     }
   </style>
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const waitlistBtn = document.getElementById("waitlistBtn");
+    const formWrapper = document.getElementById("waitlistFormWrapper");
+
+    if (waitlistBtn && formWrapper) {
+      waitlistBtn.addEventListener("click", () => {
+        formWrapper.classList.remove("max-h-0", "opacity-0");
+        formWrapper.classList.add("max-h-96", "opacity-100");
+        waitlistBtn.style.display = "none";
+      });
+    }
+  });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const expandButtons = document.querySelectorAll(".expand-btn");
+
+  expandButtons.forEach(button => {
+    button.addEventListener("click", function () {
+
+      const targetId = button.getAttribute("data-target");
+      const formWrapper = document.getElementById(targetId);
+
+      if (formWrapper) {
+        formWrapper.classList.remove("max-h-0", "opacity-0");
+        formWrapper.classList.add("max-h-96", "opacity-100");
+
+        button.style.display = "none";
+      }
+    });
+  });
+
+});
+</script>
+
+
+<!--
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const waitlistBtn = document.getElementById("waitlistBtn");
+    const formWrapper = document.getElementById("waitlistFormWrapper");
+
+    if (waitlistBtn && formWrapper) {
+      waitlistBtn.addEventListener("click", () => {
+        formWrapper.classList.remove("max-h-0", "opacity-0");
+        formWrapper.classList.add("max-h-96", "opacity-100");
+        waitlistBtn.style.display = "none";
+      });
+    }
+  });
+</script>
+-->
+
 <body class="text-gray-200">
 
   <!-- Hero Section -->
@@ -30,12 +86,47 @@
       Look sharp. Train silently. Dominate elegantly.
     </p>
     <div class="flex gap-4">
-      <button class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
-        Join the Waitlist
+      <div class="mt-6 flex flex-col items-center">
+  
+  <button 
+    id="waitlistBtn"
+    class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+    Join the Founding 250
+  </button>
+
+  <div 
+    id="waitlistFormWrapper"
+    class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 w-full flex justify-center">
+    
+    <form 
+      name="waitlist" 
+      method="POST" 
+      data-netlify="true"
+      class="mt-6 flex flex-col items-center gap-4">
+
+      <input type="hidden" name="form-name" value="waitlist" />
+
+      <input 
+        type="email" 
+        name="email" 
+        required
+        placeholder="Enter your email"
+        class="px-4 py-3 rounded-lg text-black w-64"
+      />
+
+      <button 
+        type="submit"
+        class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+        Secure My Position
       </button>
-      <button class="border border-gray-400 px-6 py-3 rounded-full hover:bg-gray-800 transition">
-        Learn More
-      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
     </div>
     <div class="mt-16">
   <img src="images/gravitas-hero.png" 
@@ -84,17 +175,77 @@
       <div class="bg-slate-900 p-8 rounded-2xl shadow-lg">
         <h3 class="text-2xl font-semibold mb-4">Classic 5</h3>
         <p class="text-gray-400 mb-6">Subtle resistance for weddings and cocktail hours.</p>
-        <button class="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+        <button class="expand-btn w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
           Pre-Order
         </button>
+
+        <div 
+    id="classic5Form"
+    class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
+
+    <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
+      <input type="hidden" name="form-name" value="preorder" />
+      <input type="hidden" name="product" value="Executive 10" />
+
+      <input 
+        type="email" 
+        name="email" 
+        required
+        placeholder="Enter your email"
+        class="px-4 py-2 rounded-lg text-black"
+      />
+
+          <button 
+            type="submit"
+            class="expand-btn bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+            data-target="classic5Form">
+            Secure My Position
+          </button>
+        </form>
+
+        </div>
+
+
+
+
       </div>
 
       <div class="bg-slate-800 p-8 rounded-2xl shadow-xl scale-105">
         <h3 class="text-2xl font-semibold mb-4">Executive 10</h3>
         <p class="text-gray-400 mb-6">Balanced load for serious social endurance.</p>
-        <button class="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
-          Pre-Order
-        </button>
+        
+        <button 
+        class="expand-btn w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+        data-target="executive10Form">
+        Reserve This Model
+      </button>
+
+  <div 
+    id="executive10Form"
+    class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
+
+    <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
+      <input type="hidden" name="form-name" value="preorder" />
+      <input type="hidden" name="product" value="Executive 10" />
+
+      <input 
+        type="email" 
+        name="email" 
+        required
+        placeholder="Enter your email"
+        class="px-4 py-2 rounded-lg text-black"
+      />
+
+          <button 
+            type="submit"
+            class="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+            Secure My Position
+          </button>
+        </form>
+
+        </div>
+
+
       </div>
 
       <div class="bg-slate-900 p-8 rounded-2xl shadow-lg">
