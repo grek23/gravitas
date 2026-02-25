@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data-netlify="true"
       class="mt-6 flex flex-col items-center gap-4">
 
-      <input type="hidden" name="form-name" value="waitlist" />
+      <input type="hidden" name="redirect" value="/thank-you.html" />
 
       <input 
         type="email" 
@@ -175,17 +175,21 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="bg-slate-900 p-8 rounded-2xl shadow-lg">
         <h3 class="text-2xl font-semibold mb-4">Classic 5</h3>
         <p class="text-gray-400 mb-6">Subtle resistance for weddings and cocktail hours.</p>
-        <button class="expand-btn w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+        <button class="expand-btn w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+        data-target="classic5Form">
           Pre-Order
         </button>
 
         <div 
-    id="classic5Form"
-    class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
+          id="classic5Form"
+          class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
 
     <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
+      
       <input type="hidden" name="form-name" value="preorder" />
-      <input type="hidden" name="product" value="Executive 10" />
+      <input type="hidden" name="redirect" value="/thank-you.html" />
+      <input type="hidden" name="product" value="classic 5" />
+      
 
       <input 
         type="email" 
@@ -197,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <button 
             type="submit"
-            class="expand-btn bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+            class="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
             data-target="classic5Form">
             Secure My Position
           </button>
@@ -205,12 +209,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         </div>
 
-
-
-
       </div>
 
-      <div class="bg-slate-800 p-8 rounded-2xl shadow-xl scale-105">
+  <div class="bg-slate-800 p-8 rounded-2xl shadow-xl scale-105">
         <h3 class="text-2xl font-semibold mb-4">Executive 10</h3>
         <p class="text-gray-400 mb-6">Balanced load for serious social endurance.</p>
         
@@ -220,42 +221,64 @@ document.addEventListener("DOMContentLoaded", function () {
         Reserve This Model
       </button>
 
-  <div 
-    id="executive10Form"
-    class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
+    <div 
+      id="executive10Form"
+      class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
 
-    <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
-      <input type="hidden" name="form-name" value="preorder" />
-      <input type="hidden" name="product" value="Executive 10" />
+      <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
+        <input type="hidden" name="form-name" value="preorder" />
+        <input type="hidden" name="product" value="Executive 10" />
 
-      <input 
-        type="email" 
-        name="email" 
-        required
-        placeholder="Enter your email"
-        class="px-4 py-2 rounded-lg text-black"
-      />
+        <input 
+          type="email" 
+          name="email" 
+          required
+          placeholder="Enter your email"
+          class="px-4 py-2 rounded-lg text-black"
+        />
 
           <button 
             type="submit"
             class="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
             Secure My Position
           </button>
-        </form>
+      </form>
 
-        </div>
-
-
-      </div>
+    </div>
+  </div>
 
       <div class="bg-slate-900 p-8 rounded-2xl shadow-lg">
         <h3 class="text-2xl font-semibold mb-4">Black Tie Beast 15</h3>
         <p class="text-gray-400 mb-6">For those who believe elegance should hurt.</p>
-        <button class="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+        <button class="expand-btn w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+        data-target="blacktie15Form">
           Pre-Order
         </button>
-      </div>
+        <div 
+          id="blacktie15Form"
+        class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 mt-4">
 
+        <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
+          <input type="hidden" name="form-name" value="preorder" />
+          <input type="hidden" name="product" value="Black Tie 15" />
+
+        <input 
+          type="email" 
+          name="email" 
+          required
+          placeholder="Enter your email"
+          class="px-4 py-2 rounded-lg text-black"
+        />
+
+          <button 
+            type="submit"
+            class="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+            Secure My Position
+          </button>
+      </form>
+
+    </div>
+      </div>
     </div>
   </section>
 
