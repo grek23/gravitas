@@ -227,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
         <input type="hidden" name="form-name" value="preorder" />
+        <input type="hidden" name="redirect" value="/thank-you.html" />
         <input type="hidden" name="product" value="Executive 10" />
 
         <input 
@@ -260,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <form name="preorder" method="POST" data-netlify="true" class="flex flex-col gap-3">
           <input type="hidden" name="form-name" value="preorder" />
+          <input type="hidden" name="redirect" value="/thank-you.html" />
           <input type="hidden" name="product" value="Black Tie 15" />
 
         <input 
@@ -298,6 +300,13 @@ document.addEventListener("DOMContentLoaded", function () {
   <footer class="py-12 text-center text-gray-500 text-sm">
     © 2026 Gravitas™. Built for elegant domination.
   </footer>
+
+<!-- Netlify form detection -->
+<form name="preorder" method="POST" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="preorder" />
+  <input type="email" name="email" />
+  <input type="hidden" name="product" />
+</form>
 
 </body>
 </html>
