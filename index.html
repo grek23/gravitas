@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
   <button 
     id="waitlistBtn"
-    class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+    class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
+    data-target="waitlistFormWrapper">
     Join the Founding 250
   </button>
 
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       class="mt-6 flex flex-col items-center gap-4">
       <input type="hidden" name="form-name" value="waitlist" />
       <input type="hidden" name="redirect" value="/thank-you.html" />
-      <input type="hidden" name="product" value="Founding250" />
+      <input type="hidden" name="Founding" value="Founding250" />
 
       <input 
         type="email" 
